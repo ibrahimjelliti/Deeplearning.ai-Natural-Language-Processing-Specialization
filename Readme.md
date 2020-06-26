@@ -28,6 +28,15 @@ This repository contains my personal notes on [DeepLearning.ai](https://deeplear
 • Use encoder-decoder, causal, and self-attention to perform advanced machine translation of complete sentences, text summarization, question-answering and to build chatbots. Models covered include T5, BERT, transformer, reformer, and more!
 Enjoy!
 
+## Usage
+
+I share the assignment notebooks with my prefilled code structred as in the course Course/Week
+The assignment notebooks are subject to changes through time.
+
+## Contributing
+Pull requests are always welcome. I am adding my notes and summary on each week of course. many weeks still in progress.
+So please open an issue first and share what to contribute, improve or change.
+
 ## Connect with your mentors and fellow learners on Slack!
 Once you enrolled to the course, you are invited to join a slack workspace for this specialization:
 Please join the Slack workspace by going to the following link [deeplearningai-nlp.slack.com](deeplearningai-nlp.slack.com)

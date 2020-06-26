@@ -1,5 +1,5 @@
 # Natural Language Processing with Classification and Vector Spaces
-Welcome to the first course of the Natural Language Processing Specialization at [Coursera](https://www.coursera.org/specializations/natural-language-processing) which is moderated by [DeepLearning.ai](http://deeplearning.ai/). The course is taught by Younes Bensouda Mourri, Łukasz Kaiser and Eddy Shyu.
+Welcome to the [first course](https://www.coursera.org/learn/classification-vector-spaces-in-nlp) of the Natural Language Processing Specialization at [Coursera](https://www.coursera.org/specializations/natural-language-processing) which is moderated by [DeepLearning.ai](http://deeplearning.ai/). The course is taught by Younes Bensouda Mourri, Łukasz Kaiser and Eddy Shyu.
 
 ## Table of contents
 
@@ -7,11 +7,13 @@ Welcome to the first course of the Natural Language Processing Specialization at
   - [Table of contents](#table-of-contents)
   - [Course summary](#course-summary)
   - [Logistic regression](#logistic-regression)
+    - [Supervised Machine Learning & Sentiment Analysis](#supervised-machine-learning--sentiment-analysis)
     - [Feature Extraction](#feature-extraction)
     - [Preprocessing](#preprocessing)
     - [Training Logistic Regression](#training-logistic-regression)
     - [Testing Logistic Regression](#testing-logistic-regression)
     - [Cost Function](#cost-function)
+  - [Naive Bayes](#naive-bayes)
 
 
 ## Course summary
@@ -33,6 +35,7 @@ Supervised Machine Learning
 
 
 ## Logistic regression
+### Supervised Machine Learning & Sentiment Analysis
 - In supervised machine learning you have input features X and a set of labels Y.
 - The goal is to minimize your error rates or cost as much as possible.
 - To do this, run the prediction function which takes in parameters data to map your features to output labels Ŷ.
@@ -101,3 +104,19 @@ Supervised Machine Learning
   - if y = 1 ==> L(Ŷ,1) = -log(Ŷ) ==> we want Ŷ to be the largest ==> Ŷ biggest value is 1
   - if y = 0 ==> L(Ŷ,0) = -log(1-Ŷ) ==> we want 1-Ŷ to be the largest ==> Ŷ to be smaller as possible because it can only has 1 value.
     - ![](Images/11.png)
+
+## Naive Bayes
+- In a corpus of tweets that can be categorized as either positive or negative sentiment, such words are sometimes being labeled positive and sometimes negative.pain
+- ![](Images/12.png)
+- Defining events A as a tweet being labeled positive, then the probability of events A shown as P of A here is calculated as the ratio between the count of positive tweets and the corpus divided by the total number of tweets in the corpus. 
+- Think about probabilities as counting how frequently an events occur.
+- The probability of the tweets expressing a negative sentiment is just equal to one minus the probability of a positive sentiment.
+- ![](Images/13.png)
+- Conditional probabilities is the probability of an outcome B knowing that event A already happened.
+- Bayes' rule states that the probability of X given Y is equal to the probability of Y given X times the ratio of the probability of X over the probability of Y.
+- ![](Images/14.png)
+-  The first step for Naive Bayes allows you to compute the conditional probabilities of each word given the class. 
+-  ![](Images/15.png)
+-Laplacian smoothing, a technique you can use to avoid your probabilities being zero.
+- ![](Images/15.png)
+-  
