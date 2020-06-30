@@ -113,10 +113,60 @@ Supervised Machine Learning
 - The probability of the tweets expressing a negative sentiment is just equal to one minus the probability of a positive sentiment.
 - ![](Images/13.png)
 - Conditional probabilities is the probability of an outcome B knowing that event A already happened.
-- Bayes' rule states that the probability of X given Y is equal to the probability of Y given X times the ratio of the probability of X over the probability of Y.
+- Bayes' rul   e states that the probability of X given Y is equal to the probability of Y given X times the ratio of the probability of X over the probability of Y.
 - ![](Images/14.png)
 -  The first step for Naive Bayes allows you to compute the conditional probabilities of each word given the class. 
 -  ![](Images/15.png)
 -Laplacian smoothing, a technique you can use to avoid your probabilities being zero.
-- ![](Images/15.png)
--  
+
+- ![](Images/16.png)
+- based on the last table, ratio of probability are defined as the positive conditional probabilitie of a word divided by its negative probability.
+- ![](Images/17.png)
+- Likelihood times prior 
+- ![](Images/18.png)
+- To avoid numerical underflow (due to multiplying small numbers) we compute the log of the likelihood
+- ![](Images/19.png)
+- If the Log Likelihood + log prior > 0 Then the tweet has a positive sentiment. Otherwise, the tweet has a negative sentiment.
+- To training Naïve Bayes model you need to do:
+    1. Get and annotate the dataset with positive and negative tweets
+    2. Preprocess the tweets
+       1. Lowecase
+       2. Remove punctuation, urls, names
+       3. Remove stop words
+       4. Stemming: reducig words to their common stem
+       5. Tokenize sentences: splitting the document into single words or tokens.
+    3. computing the vocabulary for each word and class: freq(w,class)
+    4. get probability for a given class by using the Laplacian smoothing formula: P(w|pos),P(w|neg)
+    5. Compute λ(w), log of the ratio of your conditional probabilities
+    6. Compute logprior=log(P(Pos)/P(Neg))
+- To test the trained model, we take the conditional probabilities and we use them to predict the sentiments of new unseen tweets.
+- To evaluate the model, we use the test sets of annotated tweets 
+- Given a test set X_val, Y_val we compute the score, which is a function of X_val, λ, log prior. The prediction is $pred = score>0
+- The accuracy is then
+  - ![](Images/20.png)
+- Words that are not seen in the training set are considered neutral, and so add **0** to the score 
+- Naïve Bayes Applications
+  - Sentiment analysis
+    - ![](Images/21.png)
+  - Author identification
+    - ![](Images/22.png)
+  - Spam filtering
+    - ![](Images/23.png)
+  - Information retrieval
+    - ![](Images/24.png)
+  - Word disambiguation
+    - For example if we can not decide whether the word **bank** (for example) refers to the river or the financial institution, compute the ratio
+    - ![](Images/25.png)
+- Naïve Bayes Assumptions:
+  - Conditional Independence : Not True in NLP
+  - Relative frequency of training classes affect the model and can be not representative of the real world distribution
+- Naive bayes Error Analysis
+  - Preprocessing
+    - Removing punctuation (example ':(' )
+    - Removing stop words
+  - Word order (not word order in the sentence)
+    - Example : I am happy because I did not go Versus I am not happy because I did go
+  - Adversarial attacks (Easily detected by humans but algorithms are usually terrible at it)
+    - Sarcasm, Irony, Euphemisms, etc
+    - Example: This is a ridiculously powerful movie. The plot was gripping and I cried right through until the ending.
+    
