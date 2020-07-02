@@ -24,6 +24,14 @@ Welcome to the [first course](https://www.coursera.org/learn/classification-vect
     - [Testing Naïve Bayes](#testing-naïve-bayes)
     - [Naïve Bayes Applications](#naïve-bayes-applications)
     - [Sources of Errors in Naïve Bayes](#sources-of-errors-in-naïve-bayes)
+  - [Word Embeddings](#word-embeddings)
+    - [Vector space models](#vector-space-models)
+    - [Word by Word Design](#word-by-word-design)
+    - [Word by Document Design](#word-by-document-design)
+    - [Euclidean distance](#euclidean-distance)
+    - [Cosine similarity](#cosine-similarity)
+    - [Manipulating Words in Vector Spaces](#manipulating-words-in-vector-spaces)
+    - [PCA](#pca)
 
 
 ## Course summary
@@ -188,4 +196,12 @@ Supervised Machine Learning
   - Adversarial attacks (Easily detected by humans but algorithms are usually terrible at it)
     - Sarcasm, Irony, Euphemisms, etc
     - Example: This is a ridiculously powerful movie. The plot was gripping and I cried right through until the ending
-    
+
+## Word Embeddings
+### Vector space models
+### Word by Word Design
+### Word by Document Design
+### Euclidean distance
+### Cosine similarity
+### Manipulating Words in Vector Spaces
+### PCA
