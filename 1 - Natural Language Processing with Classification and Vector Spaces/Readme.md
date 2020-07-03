@@ -199,9 +199,47 @@ Supervised Machine Learning
 
 ## Word Embeddings
 ### Vector space models
+- Vector space models repesent words and documents as Vectors that captures relative meaning by identifying the context around
+each word in the text
+- Main use of Vector space models is to Identify similarities and dependencies
+  - ![](Images/26.png)
+- Fundamental concept : "You shall know a word by the company it keeps." Firth,1957
+- Applications include:
+  - Information Extraction
+  - Machine Translation
+  - Chatbots
 ### Word by Word Design
+- Count the number of times each two words occur together within a certain distance k
+  - ![](Images/27.png)
 ### Word by Document Design
+- Count the number of times a word occurs within a certain category
+  - ![](Images/28.png)
 ### Euclidean distance
+- Euclidean distance is the length of the straight line between points
+- For two vectors the formula and in python is :
+  - ![](Images/29.png)
+- Euclidean distance can be misleading when corpora have different sizes
 ### Cosine similarity
+- For two vectors v,w the cosine of their angle β is given by :
+  - ![](Images/30.png)
+- Cosine similarity give values between 0 and 1
 ### Manipulating Words in Vector Spaces
+- If the vectors space are representative of the meaning then we can do operations like
+  - ![](Images/31.png) 
 ### PCA
+-  Visualization words vector space which can be in a higher dimension into a 2 or 3 dimension space so you can see relationships between words.
+- PCA consists in projecting your vectors in a lower dimension space, while trying to retain as much information as possible.
+- PCA Algorithm :
+  - Eigenvectors give the directions of uncorrelated features
+  - Eigenvalues give the amount of information retained by each feature, the variance of the new feature:
+    1. Mean Normalize Data, i.e. normalize **each feature** separately
+    2. Get the Covariance Matrix 
+    3. Perform SVD to get **U** with shape (num_features*num_features) and the Eigen vectors matrix and **S** the Eigen values matrix.
+
+    4. Dot Product to Project Data on **k** dimensions which give the projection on uncorrelated features:
+       - ![](Images/31.png) 
+
+    5. Compute the percentage of Retained Variance:
+       - ![](Images/32.png) 
+
+  - The Eigenvalues should be sorted in descending order
