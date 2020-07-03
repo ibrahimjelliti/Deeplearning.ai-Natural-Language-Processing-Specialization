@@ -32,6 +32,13 @@ Welcome to the [first course](https://www.coursera.org/learn/classification-vect
     - [Cosine similarity](#cosine-similarity)
     - [Manipulating Words in Vector Spaces](#manipulating-words-in-vector-spaces)
     - [PCA](#pca)
+  - [Word Translation](#word-translation)
+    - [Transforming word vectors](#transforming-word-vectors)
+    - [K-nearest neighbors](#k-nearest-neighbors)
+    - [Hash tables and hash functions](#hash-tables-and-hash-functions)
+    - [Locality Sensitive Hashing](#locality-sensitive-hashing)
+    - [Approximate nearest neighbors](#approximate-nearest-neighbors)
+    - [Searching documents](#searching-documents)
 
 
 ## Course summary
@@ -235,11 +242,46 @@ each word in the text
     1. Mean Normalize Data, i.e. normalize **each feature** separately
     2. Get the Covariance Matrix 
     3. Perform SVD to get **U** with shape (num_features*num_features) and the Eigen vectors matrix and **S** the Eigen values matrix.
-
     4. Dot Product to Project Data on **k** dimensions which give the projection on uncorrelated features:
-       - ![](Images/31.png) 
-
-    5. Compute the percentage of Retained Variance:
        - ![](Images/32.png) 
-
+    5. Compute the percentage of Retained Variance:
+       - ![](Images/33.png) 
   - The Eigenvalues should be sorted in descending order
+
+## Word Translation
+### Searching documents
+- Documents can be represented as vectors with the same dimension as words.
+- Add the word vectors that figure in the document.
+  - ![](Images/43.png)
+### Transforming word vectors
+- In order to translate from a language a word vectors are X to another language a word vectors are Y we want to build a matrix R such that : 
+  - ![](Images/34.png) 
+- To solve for R we use gradient descent for the following loss:
+  - ![](Images/35.png)
+### K-nearest neighbors
+- To translate from X to Y using the R matrix, you may find that XR doesn't correspond to any specific vector in Y.
+- KNN can search for the K nearest neighbors from the computed vector XR
+- Thus searching in the whole space can be slow, using a hash tables can minimize your search space
+- Hash tables may omit some neighbors that are close to your computed vector
+### Hash tables and hash functions
+- A hush function maps an object to a bucket in a hash table
+  - ![](Images/36.png)
+- A simple hash function : Hash Value = vector % number of buckets
+  - ![](Images/37.png)  
+- This function does not store similar objects in the same bucket ⇒ Locality sensitive hashing
+### Locality Sensitive Hashing
+- Separate the space using hyperplanes
+  - ![](Images/38.png)
+- For each vector v compute its scalar product **sign** with a normal vector on a hyperplane h<sub>i</sub>.
+- the product **sign** determines on which side the vector is. 
+- If the dot product is positive the  h<sub>i</sub> = 1, else  h<sub>i</sub>=0
+  - ![](Images/39.png)
+- the hash value is:
+  - ![](Images/40.png)
+### Approximate nearest neighbors
+- Subdivide the space using multiple sets of random planes
+  - ![](Images/41.png)
+- Each subdivision will give (probably) different vectors in the same bucket of the computed vector
+- Those different vectors (from multiple subdivisions) are good candidates to be the k nearest neighbors
+  - ![](Images/42.png)
+- This Approximate nearest neighbors is not perfect but it is much faster than naïve search
