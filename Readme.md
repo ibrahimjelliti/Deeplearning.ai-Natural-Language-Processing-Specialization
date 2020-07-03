@@ -30,12 +30,8 @@ Enjoy!
 
 ## Usage
 
-I share the assignment notebooks with my prefilled code structred as in the course Course/Week
+I share the assignment notebooks with my prefilled and from the contributors code structred as in the course Course/Week
 The assignment notebooks are subject to changes through time.
-
-## Contributing
-Pull requests are always welcome. I am adding my notes and summary on each week of course. many weeks still in progress.
-So please open an issue first and share what to contribute, improve or change.
 
 ## Connect with your mentors and fellow learners on Slack!
 Once you enrolled to the course, you are invited to join a slack workspace for this specialization:
