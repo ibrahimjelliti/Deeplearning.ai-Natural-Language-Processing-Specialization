@@ -30,6 +30,23 @@ Welcome to the [second course](https://www.coursera.org/learn/probabilistic-mode
     - [Language Model evaluation](#language-model-evaluation)
     - [Out of Vocabulary Words](#out-of-vocabulary-words)
     - [Smoothing](#smoothing)
+  - [Word embeddings with neural networks](#word-embeddings-with-neural-networks)
+    - [Basic Word Representations](#basic-word-representations)
+    - [Word Embeddings](#word-embeddings)
+    - [Word Embedding Methods](#word-embedding-methods)
+    - [Continuous Bag-of-Words Model](#continuous-bag-of-words-model)
+    - [Cleaning and Tokenization](#cleaning-and-tokenization)
+    - [Transforming Words into Vectors](#transforming-words-into-vectors)
+    - [Architecture of the CBOW Model](#architecture-of-the-cbow-model)
+    - [CBOW Model Dimensions](#cbow-model-dimensions)
+    - [Activation Functions](#activation-functions)
+    - [Cost Functions](#cost-functions)
+    - [Forward Propagation](#forward-propagation)
+      - [Backpropagation and Gradient Descent](#backpropagation-and-gradient-descent)
+      - [Extracting Word Embedding Vectors](#extracting-word-embedding-vectors)
+    - [Evaluating Word Embeddings](#evaluating-word-embeddings)
+      - [Intrinsic Evaluation](#intrinsic-evaluation)
+      - [Extrinsic Evaluation](#extrinsic-evaluation)
 
 ## Course summary
 This is the  course summary as its given on the course [link] (https://www.coursera.org/learn/probabilistic-models-in-nlp):
@@ -250,3 +267,85 @@ In Course 2 of the Natural Language Processing Specialization, offered by deeple
 - Linear interpolation of all orders of n-gram
   - Combine the weighted probability of the n-gram, N minus 1 gram down to unigrams.
   - ![](Images/37.png)
+## Word embeddings with neural networks
+### Basic Word Representations
+- The simplest way to represent words as numbers is for a given vocabulary to assign a unique integer to each word
+  - ![](Images/38.png) 
+  - Although it's simple representation, it has little sementic sense
+- One-Hot Vector representation
+  - ![](Images/39.png)
+  - Although it's simple representation and not implied in ordering, but can be huge for computation and doesn't embed meaning
+### Word Embeddings
+- Word embeddings are vectors that's carrying meaning with relatively low dimension
+  - ![](Images/40.png) 
+- To create a word embeddings you need a corpus of text and an embedding method
+  - ![](Images/41.png)
+### Word Embedding Methods
+- Word2vec: which initially popularized the use of machine learning, to generate word embeddings
+  - Word2vec uses a shallow neural network to learn word embeddings
+  - It proposes two model architectures, 
+    1. Continuous bag of words(CBOW) which predict the missing word just giving the surround word
+    2. Countinuous skip-gram/ skip-gram with negative sampling(SGNS) which does the reverse of the CBOW method, SGNS learns to predict the word surrounding a given input word
+- GloVe: involves factorizing the logarithm of the corpuses word co-occurrence matrix, similarly to the counter matrix
+- fastText:  based on the skip-gram model and takes into account the structure of words by representing words as an n-gram of characters. 
+  - This enables the model to support previously unseen words, known as outer vocabulary words(OOV), by inferring their embedding from the sequence of characters they are made of, and the corresponding sequences that it was initially trained on.
+  - Word embedding vectors can be averaged together to make vector representations of phrases and sentences.
+- Other examples of advanced models that generate word embeddings are: BERT,GPT-2,ELMo
+### Continuous Bag-of-Words Model
+- CBOW is ML-based embedding methods that try to predict a missing word based on the surrounding words.
+- The rationale is that if two unique words are both frequently surrounded by a similar sets of words when used in various sentences => those two words tend to be related semantically.
+-  To create training data for the prediction task, we need set of example of context words and center words
+   - ![](Images/42.png)
+   - by sliding the window, you creating the next traing example and the target center word
+   - ![](Images/43.png)
+### Cleaning and Tokenization
+- We should consider the words of your corpus as case insensitive, The==THE==the
+- Punctuation: represents ? . , ! and other characters as a single special word of the vocabulary
+- Numbers: if numbers not caring meaning in your use-case, we can drop them or keep them (its possible to replace them with special token <NUMBER>)
+- Special characters: math/ currency symbols, paragraph signs
+- Special words: emojis, hashtags
+### Transforming Words into Vectors
+- This done by transforming centeral and context word into one-hot vectors
+- Final prepared training set is:
+  - ![](Images/44.png)
+### Architecture of the CBOW Model
+- The Continuous Bag of Words model is based on the shallow dense neural network with an input layer, a single hidden layer, and output layer.
+- ![](Images/45.png)
+### CBOW Model Dimensions
+- ![](Images/46.png)
+- ![](Images/47.png)
+### Activation Functions
+- ![](Images/48.png)
+- ![](Images/49.png)
+### Cost Functions
+- The objective of the learning process is to find the parameters that minimize the loss given the training data sets using the cross-entropy loss
+- ![](Images/50.png)
+- ![](Images/51.png)
+### Forward Propagation
+- ![](Images/52.png)
+- ![](Images/53.png)
+#### Backpropagation and Gradient Descent
+- Backpropagation calculate the partial derivatives of cost with respect to weights and biases
+  - ![](Images/54.png)
+- Gradient descent update weights and biases
+  - ![](Images/55.png)
+#### Extracting Word Embedding Vectors
+- Afterwe have trained the neural network, we can extract three alternative word embedding representations
+  1. consider each column of W_1 as the column vector embedding vector of a word of the vocabulary
+    - ![](Images/56.png)
+  2. use each row of W_2 as the word embedding row vector for the corresponding word. 
+    - ![](Images/57.png) 
+  3. average W_1 and the transpose of W_2 to obtain W_3, a new n by v matrix. 
+    - ![](Images/58.png) 
+### Evaluating Word Embeddings
+#### Intrinsic Evaluation
+- Intrinsic evaluation methods assess how well the word embeddings inherently capture the semantic(meaning) or syntactic(grammar) relationships between the words.
+- Test on semantic analogies
+  - ![](Images/59.png)
+- Using a clustering algorithm to group similar word embedding vectors, and determining of the cluster's capture related words
+  - ![](Images/60.png) 
+  - ![](Images/61.png)
+#### Extrinsic Evaluation
+- Test the word embeddings to perform an external task, Named Entity recognition, POS tagging
+- Evaluate this classifier on the test set with some selected evaluation metric, such as accuracy or the F1 score.
+- The evaluation will be more time-consuming than an intrinsic evaluation and more difficult to troubleshoot.
