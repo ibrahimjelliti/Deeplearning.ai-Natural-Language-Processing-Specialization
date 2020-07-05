@@ -21,6 +21,15 @@ Welcome to the [second course](https://www.coursera.org/learn/probabilistic-mode
       - [Initialization](#initialization)
       - [Forward Pass](#forward-pass)
       - [Backward Pass](#backward-pass)
+  - [Autocomplete and Language Models](#autocomplete-and-language-models)
+    - [N-Grams](#n-grams)
+    - [N-grams and Probabilities](#n-grams-and-probabilities)
+    - [Sequence Probabilities](#sequence-probabilities)
+    - [Starting and Ending Sentences](#starting-and-ending-sentences)
+    - [The N-gram Language Model](#the-n-gram-language-model)
+    - [Language Model evaluation](#language-model-evaluation)
+    - [Out of Vocabulary Words](#out-of-vocabulary-words)
+    - [Smoothing](#smoothing)
 
 ## Course summary
 This is the  course summary as its given on the course [link] (https://www.coursera.org/learn/probabilistic-models-in-nlp):
@@ -107,7 +116,7 @@ In Course 2 of the Natural Language Processing Specialization, offered by deeple
   - ![](Images/8.png) 
 ### Markov Chains and POS Tags
 - Think about a sentence as a sequence of words with associated parts of speech tags
-  - you can represent that sequence with a graph 
+  - we can represent that sequence with a graph 
   - where the parts of speech tags are events that can occur depicted by the states of the model graph.
   - the weights on the arrows between the states define the probability of going from one state to another
     - ![](Images/9.png)  
@@ -138,7 +147,7 @@ In Course 2 of the Natural Language Processing Specialization, offered by deeple
 - The goal is to to find the sequence of hidden states or parts of speech tags that have the highest probability for a sequence
   - ![](Images/16.png)
 - The algorithm can be split into three main steps: the initialization step, the forward pass, and the backward pass.
-- Given your transition and emission probabilities, you first populates and then use the auxiliary matrices C and D
+- Given your transition and emission probabilities, we first populates and then use the auxiliary matrices C and D
   - matrix C holds the intermediate optimal probabilities
   - matrix D holds the indices of the visited states as we are traversing the model graph to find the most likely sequence of parts of speech tags for the given sequence of words, W<sub>1</sub> all the way to W<sub>k</sub>.
   - C and D matrix have n rows (number of parts of speech tags) and k comlumns (number of words in the given sequence)
@@ -154,8 +163,90 @@ In Course 2 of the Natural Language Processing Specialization, offered by deeple
 #### Backward Pass
 - The backward pass help retrieve the most likely sequence of parts of speech tags for your given sequence of words.
 - First calculate the index of the entry, C<sub>i,K</sub>, with the highest probability in the last column of C
-  - represents the last hidden state you traversed when you observe the word w<sub>i</sub>
+  - represents the last hidden state we traversed when we observe the word w<sub>i</sub>
 - Use this index to traverse back through the matrix D to reconstruct the sequence of parts of speech tags
 -  multiply many very small numbers like probabilities leads to numerical issues
    - Use log probabilities instead where numbers are summed instead of multiplied.
    - ![](Images/20.png)
+## Autocomplete and Language Models
+### N-Grams
+- A language model is a tool that's calculates the probabilities of sentences.
+- Language models can estimate the probability of an upcoming word given a history of previous words.
+- apply language models to autocomplete a given sentence then it outputs a suggestions to complete the sentence
+- Applications:
+  - Speech recognition
+  - Spelling correction
+  - Augmentativce communication
+### N-grams and Probabilities
+- N-gram is a sequence of words. N-grams can also be characters or other elements. 
+- ![](Images/21.png)
+- Sequence notation:
+  - m is the length of a text corpus
+  - W<sub>i</sub><sup>j</sup> refers to the sequence of words from index i to j from the text corpus
+- Uni-gram probability
+  - ![](Images/22.png)
+- Bi-gram probability
+  - ![](Images/23.png)
+- N-gram probability
+  - ![](Images/24.png)
+### Sequence Probabilities
+- giving a sentence the Teacher drinks tea, the sentence probablity can be represented as based on conditional probability and chain rule: 
+  - ![](Images/25.png)
+- this direct approach to sequence probability has its limitations, longer parts of your sentence are very unlikely to appear in the training corpus.
+  - P(tea|the teacher drinks)
+  - Since neither of them is likely to exist in the training corpus their counts are 0.
+  - The formula for the probability of the entire sentence can't give a probability estimate in this situation.
+- Approximation of sequence probability 
+  - Markov assumption: only last N words matter
+  - Bigram P(w<sub>n</sub>| w<sub>1</sub><sup>n-1</sup>) ≈ P(w<sub>n</sub>| w<sub>n-1</sub>) 
+  - Ngram P(w<sub>n</sub>| w<sub>1</sub><sup>n-1</sup>) ≈ P(w<sub>n</sub>| w<sub>n-N+1</sub><sup>n-1</sup>) 
+  - Entire sentence modeled with Bigram:
+      - ![](Images/26.png) 
+### Starting and Ending Sentences
+- Start of sentence symbol: <s>
+- End of sentence symbol: </s>
+### The N-gram Language Model
+- The count matrix captures the number of occurrences of relative n-grams
+  - ![](Images/27.png)
+- Transform the count matrix into a probability matrix that contains information about the conditional probability of the n-grams.
+  - ![](Images/28.png)
+- Relate the probability matrix to the language model.
+  - ![](Images/29.png)
+- Multiplying many probabilities brings the risk of numerical underflow,use the logarithm of a product istead to write the product of terms as the sum of other terms.
+### Language Model evaluation
+- In order to evaluate a Language model, split the text corpus into train (80%), validation (10%) and Test (10%) set.
+- Split methods can be: continus text or Random short sequences
+  - ![](Images/30.png)
+- Evaluate the language models using the perplexity metric
+  - ![](Images/31.png)
+  - The smaller the perplexity, the better the model
+  - Character level models PP is lower than word-based models PP
+  - Perplexity for bigram models
+    - ![](Images/32.png)
+  - Log perplexity
+    - ![](Images/33.png)
+### Out of Vocabulary Words
+- Unknown words are words not find the vocabuary.
+  - model out of vocabulary words by a special word **UNK**.
+  - any word in the corpus not in the vocabulary will be replaced by **UNK**
+### Smoothing
+- When we train n-gram on a limited corpus, the probabilities of some words may be skewed.
+  - This appear when N-grams made of known words still might be missing in the training corpus
+  - Their count can not be used for probability estimation
+  - ![](Images/34.png)
+- Laplacian smoothing or Add-one smoothing
+  - ![](Images/35.png)
+- Add-K smoothing
+  - ![](Images/36.png)
+- BackOff:
+  - If n-gram information is missing, we use N minus 1 gram.
+  - If that's also missing, we would use N minus 2 gram and so on until we find non-zero probability
+  - This method distorts the probability distribution. Especially for smaller corporal
+  - Some probability needs to be discounted from higher level n-gram to use it for lower-level n-gram, e.g. Katz backoff
+  -  In very large web-scale corpuses, a method called **stupid backoff** has been effective.
+     - With stupid backoff, no probability discounting is applied
+     - If the higher order n-gram probability is missing, the lower-order n-gram probability is used multiplied by a constant **0.4**
+     - P(chocolate| Jhon drinks) = 0.4 x P(chocolate| drinks)
+- Linear interpolation of all orders of n-gram
+  - Combine the weighted probability of the n-gram, N minus 1 gram down to unigrams.
+  - ![](Images/37.png)
