@@ -1,3 +1,5 @@
+![](https://github.com/bhushan-borole/natural-language-processing-specialization/blob/master/images/banner.jpg)
+
 # DeepLearning.ai NLP Specialization Courses Notes
 This repository contains my personal notes on [DeepLearning.ai](https://deeplearning.ai) NLP specialization courses.
 
