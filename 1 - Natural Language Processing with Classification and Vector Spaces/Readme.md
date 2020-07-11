@@ -151,6 +151,8 @@ Supervised Machine Learning
 ### Laplace smoothing
 - Laplacian smoothing, a technique you can use to avoid your probabilities being zero.
 - ![](Images/16.png)
+- Appliying the formula on the table, the sum of probabilities will still be one and no longer has a probability of zero.
+- ![](Images/44.png)
 ### Ratio of probabilities
 - based on the last table, ratio of probability are defined as the positive conditional probabilitie of a word divided by its negative probability.
 - ![](Images/17.png)
