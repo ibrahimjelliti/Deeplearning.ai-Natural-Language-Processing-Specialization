@@ -1,0 +1,49 @@
+en-tweet is a mapping into Petrov et al.'s universal tagset from the tagset 
+used in the corpus of English Twitter messages published as
+
+  Kevin Gimpel, Nathan Schneider, Brendan O’Connor, Dipanjan Das, Daniel Mills, 
+  Jacob Eisenstein, Michael Heilman, Dani Yogatama, Jeffrey Flanigan, and 
+  Noah A. Smith (2011). Part-of-Speech Tagging for Twitter: Annotation, 
+  Features, and Experiments. Proc. of ACL.
+
+We summarize the tagset here for convenience:
+
+Nominal, Nominal + Verbal
+N	common noun
+O	pronoun (personal/WH; not possessive)
+S	nominal + possessive
+ˆ	proper noun
+Z	proper noun + possessive
+L	nominal + verbal
+M	proper noun + verbal
+
+Other open-class words
+V	verb incl. copula, auxiliaries
+A	adjective
+R	adverb
+!	interjection
+
+Other closed-class words
+D	determiner
+P	pre- or postposition, or subordinating conjunction
+&	coordinating conjunction
+T	verb particle
+X	existential there, predeterminers
+Y	X + verbal
+
+Twitter/online-specific
+#	hashtag (indicates topic/category for tweet)
+@	at-mention (indicates another user as a recipient of a tweet)
+~	discourse marker, indications of continuation of a message across multiple tweets
+U	URL or email address
+E	emoticon
+
+Miscellaneous
+$	numeral (CD)
+,	punctuation
+G	other abbreviations, foreign words, possessive endings, symbols, garbage
+
+
+See http://www.ark.cs.cmu.edu/TweetNLP/ for more information.
+
+- Nathan Schneider, 2011-05-06

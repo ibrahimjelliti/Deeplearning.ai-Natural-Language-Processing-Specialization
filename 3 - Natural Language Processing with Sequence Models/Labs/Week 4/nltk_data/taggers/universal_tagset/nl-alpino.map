@@ -1,0 +1,12 @@
+Adj	ADJ
+Adv	ADV
+Art	DET
+Conj	CONJ
+Int	X
+Misc	X
+N	NOUN
+Num	NUM
+Prep	ADP
+Pron	PRON
+Punc	.
+V	VERB
