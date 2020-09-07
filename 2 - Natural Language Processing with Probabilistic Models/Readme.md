@@ -1,4 +1,4 @@
-![](https://media-exp1.licdn.com/dms/image/C5622AQF9qTj2PByLAg/feedshare-shrink_2048_1536/0?e=1596672000&v=beta&t=Am-NSJSAH7TEqR8xwHLcF7aqupXzGIOZpdNv4Pw2RwU)
+![](Images/banner.jpg)
 # Natural Language Processing with Probabilistic Model
 Welcome to the [second course](https://www.coursera.org/learn/probabilistic-models-in-nlp) of the Natural Language Processing Specialization at [Coursera](https://www.coursera.org/specializations/natural-language-processing) which is moderated by [DeepLearning.ai](http://deeplearning.ai/). The course is taught by Younes Bensouda Mourri, Łukasz Kaiser and Eddy Shyu.
 
@@ -7,6 +7,7 @@ Welcome to the [second course](https://www.coursera.org/learn/probabilistic-mode
 
 ## Table of contents
 - [Natural Language Processing with Probabilistic Model](#natural-language-processing-with-probabilistic-model)
+- [My Certificate](#my-certificate)
   - [Table of contents](#table-of-contents)
   - [Course summary](#course-summary)
   - [Autocorrect and Dynamic Programming](#autocorrect-and-dynamic-programming)

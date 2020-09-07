@@ -1,4 +1,4 @@
-![](https://media-exp1.licdn.com/dms/image/C5622AQE93SfLu9WSeA/feedshare-shrink_2048_1536/0?e=1596672000&v=beta&t=m7lKkARJn-DdgMEsTXkvER982QE2wualiIJOiFnK584)
+![](Images/banner.jpg)
 # Natural Language Processing with Classification and Vector Spaces
 Welcome to the [first course](https://www.coursera.org/learn/classification-vector-spaces-in-nlp) of the Natural Language Processing Specialization at [Coursera](https://www.coursera.org/specializations/natural-language-processing) which is moderated by [DeepLearning.ai](http://deeplearning.ai/). The course is taught by Younes Bensouda Mourri, Łukasz Kaiser and Eddy Shyu.
 
@@ -8,6 +8,7 @@ Welcome to the [first course](https://www.coursera.org/learn/classification-vect
 ## Table of contents
 
 - [Natural Language Processing with Classification and Vector Spaces](#natural-language-processing-with-classification-and-vector-spaces)
+- [My Certificate](#my-certificate)
   - [Table of contents](#table-of-contents)
   - [Course summary](#course-summary)
   - [Logistic regression](#logistic-regression)
@@ -37,12 +38,12 @@ Welcome to the [first course](https://www.coursera.org/learn/classification-vect
     - [Manipulating Words in Vector Spaces](#manipulating-words-in-vector-spaces)
     - [PCA](#pca)
   - [Word Translation](#word-translation)
+    - [Searching documents](#searching-documents)
     - [Transforming word vectors](#transforming-word-vectors)
     - [K-nearest neighbors](#k-nearest-neighbors)
     - [Hash tables and hash functions](#hash-tables-and-hash-functions)
     - [Locality Sensitive Hashing](#locality-sensitive-hashing)
     - [Approximate nearest neighbors](#approximate-nearest-neighbors)
-    - [Searching documents](#searching-documents)
 
 
 ## Course summary

@@ -1,4 +1,4 @@
-![](https://media-exp1.licdn.com/dms/image/C4E22AQE9PsQ0g2DQcg/feedshare-shrink_2048_1536/0?e=1596672000&v=beta&t=zdcgLD-5bzvssABM4NMKtU41kJW9YW4T0HK_nh3U47A)
+![](banner.jpg)
 
 # DeepLearning.ai NLP Specialization Courses Notes
 This repository contains my personal notes on [DeepLearning.ai](https://deeplearning.ai) NLP specialization courses.
