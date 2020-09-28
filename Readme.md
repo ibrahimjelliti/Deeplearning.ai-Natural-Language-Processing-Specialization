@@ -11,14 +11,14 @@ This repository contains my personal notes on [DeepLearning.ai](https://deeplear
 4. [Natural Language Processing with Attention Models](https://github.com/ijelliti/Deeplearning.ai-Natural-Language-Processing-Specialization/tree/master/4%20-%20Natural%20Language%20Processing%20with%20Attention%20Models)
 
 
-## About This Specialization (From the official NLP Specialization page)
+# About This Specialization (From the official NLP Specialization page)
 - Natural Language Processing (NLP) uses algorithms to understand and manipulate human language. This technology is one of the most broadly applied areas of machine learning. As AI continues to expand, so will the demand for professionals skilled at building models that analyze speech and language, uncover contextual patterns, and produce insights from text and audio.
 
 - By the end of this Specialization, you will be ready to design NLP applications that perform question-answering and sentiment analysis, create tools to translate languages and summarize text, and even build chatbots. These and other NLP applications are going to be at the forefront of the coming transformation to an AI-powered future.
 
 - This Specialization is designed and taught by two experts in NLP, machine learning, and deep learning. Younes Bensouda Mourri is an Instructor of AI at Stanford University who also helped build the Deep Learning Specialization. Łukasz Kaiser is a Staff Research Scientist at Google Brain and the co-author of Tensorflow, the Tensor2Tensor and Trax libraries, and the Transformer paper.
 
-## Applied Learning Project
+# Applied Learning Project
 *This Specialization will equip you with the state-of-the-art deep learning techniques needed to build cutting-edge NLP systems:*
 
 • Use logistic regression, naïve Bayes, and word vectors to implement sentiment analysis, complete analogies, and translate words, and use locality sensitive hashing for approximate nearest neighbors.
@@ -30,27 +30,22 @@ This repository contains my personal notes on [DeepLearning.ai](https://deeplear
 • Use encoder-decoder, causal, and self-attention to perform advanced machine translation of complete sentences, text summarization, question-answering and to build chatbots. Models covered include T5, BERT, transformer, reformer, and more!
 Enjoy!
 
-## Usage
+# Usage
 
 I share the assignment notebooks with my prefilled and from the contributors code structred as in the course Course/Week
 The assignment notebooks are subject to changes through time.
 
-## Connect with your mentors and fellow learners on Slack!
+# Connect with your mentors and fellow learners on Slack!
 Once you enrolled to the course, you are invited to join a slack workspace for this specialization:
 Please join the Slack workspace by going to the following link [deeplearningai-nlp.slack.com](deeplearningai-nlp.slack.com)
 This Slack workspace includes all courses of this specialization.
-
-## Contact Information
+# Contact Information
 - Twitter: [@IbrahimJelliti](https://twitter.com/IbrahimJelliti)
 - LinkedIn: [@ijelliti](https://www.linkedin.com/in/ijelliti/)
 - the specialization slack channel:  @ibrahim 
-
+# Stargazers over Time
+[![Stargazers over time](https://starchart.cc/ijelliti/Deeplearning.ai-Natural-Language-Processing-Specialization.svg)](https://starchart.cc/ijelliti/Deeplearning.ai-Natural-Language-Processing-Specialization)
 <br/>
 
-<br/>
-
-<br/>
-
-<br/>
 
 Ibrahim Jelliti © 2020
