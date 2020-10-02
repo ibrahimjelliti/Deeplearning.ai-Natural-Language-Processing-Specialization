@@ -1,4 +1,4 @@
-# My GAN Specialization repositery
+# My GAN Specialization repository
 [**Click on the image**](https://github.com/ijelliti/Deeplearning.ai-Generative-Adversarial-Networks-Specialization)
 [![](https://raw.githubusercontent.com/ijelliti/Deeplearning.ai-Generative-Adversarial-Networks-Specialization/master/GAN-banner.jpg)](https://github.com/ijelliti/Deeplearning.ai-Generative-Adversarial-Networks-Specialization)
 ![](banner.jpg)
