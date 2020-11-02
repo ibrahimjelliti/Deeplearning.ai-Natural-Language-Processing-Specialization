@@ -44,10 +44,10 @@ Please join the Slack workspace by going to the following link [deeplearningai-n
 This Slack workspace includes all courses of this specialization.
 # Contact Information
 - Twitter: [@IbrahimJelliti](https://twitter.com/IbrahimJelliti)
-- LinkedIn: [@ijelliti](https://www.linkedin.com/in/ijelliti/)
+- LinkedIn: [@ibrahimjelliti](https://www.linkedin.com/in/ibrahimjelliti/)
 - the specialization slack channel:  @ibrahim 
 # Stargazers over Time
-[![Stargazers over time](https://starchart.cc/ijelliti/Deeplearning.ai-Natural-Language-Processing-Specialization.svg)](https://starchart.cc/ijelliti/Deeplearning.ai-Natural-Language-Processing-Specialization)
+[![Stargazers over time](https://starchart.cc/ibrahimjelliti/Deeplearning.ai-Natural-Language-Processing-Specialization.svg)](https://starchart.cc/ibrahimjelliti/Deeplearning.ai-Natural-Language-Processing-Specialization)
 <br/>
 
 
