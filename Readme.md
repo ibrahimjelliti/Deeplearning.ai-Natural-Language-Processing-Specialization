@@ -40,7 +40,7 @@ The assignment notebooks are subject to changes through time.
 
 # Connect with your mentors and fellow learners on Slack!
 Once you enrolled to the course, you are invited to join a slack workspace for this specialization:
-Please join the Slack workspace by going to the following link [deeplearningai-nlp.slack.com](deeplearningai-nlp.slack.com)
+Please join the Slack workspace by going to the following link [deeplearningai-nlp.slack.com](htpps://deeplearningai-nlp.slack.com)
 This Slack workspace includes all courses of this specialization.
 # Contact Information
 - Twitter: [@IbrahimJelliti](https://twitter.com/IbrahimJelliti)
