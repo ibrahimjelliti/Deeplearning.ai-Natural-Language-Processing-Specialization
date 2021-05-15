@@ -53,10 +53,10 @@ def preprocess(vocab, data_fp):
             else:
                 orig.append(word.strip())
                 prep.append(word.strip())
-
-    assert(len(orig) == len(open(data_fp, "r").readlines()))
-    assert(len(prep) == len(open(data_fp, "r").readlines()))
-
+    f = open(data_fp, "r")
+    assert(len(orig) == len(f.readlines()))
+    assert(len(prep) == len(f.readlines()))
+    f.close()
     return orig, prep
 
 
