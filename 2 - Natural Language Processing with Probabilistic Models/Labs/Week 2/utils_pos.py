@@ -22,7 +22,6 @@ def get_word_tag(line, vocab):
             # Handle unknown words
             word = assign_unk(word)
         return word, tag
-    return None 
 
 
 def preprocess(vocab, data_fp):
