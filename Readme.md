@@ -2,7 +2,7 @@
 [**Click on the image**](https://github.com/ijelliti/Deeplearning.ai-Generative-Adversarial-Networks-Specialization)
 [![](https://raw.githubusercontent.com/ijelliti/Deeplearning.ai-Generative-Adversarial-Networks-Specialization/master/GAN-banner.jpg)](https://github.com/ijelliti/Deeplearning.ai-Generative-Adversarial-Networks-Specialization)
 ![](banner.jpg)
-#
+
 # DeepLearning.ai NLP Specialization Courses Notes
 This repository contains my personal notes on [DeepLearning.ai](https://deeplearning.ai) NLP specialization courses.
 
